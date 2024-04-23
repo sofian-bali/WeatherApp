@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:weather_app/blocs/list_adress_cubit.dart';
 import 'package:weather_app/ui/screens/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final ListAdressCubit listAdressCubit = ListAdressCubit();
+
+  listAdressCubit.getSavedAddresses();
+
+  runApp(MultiProvider(
+    providers: [
+      BlocProvider<ListAdressCubit>(
+        create: (_) => listAdressCubit,
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,4 +36,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
