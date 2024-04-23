@@ -13,10 +13,10 @@ class AdressState {
         currentAddress = null;
 }
 
-class ListAddressCubit extends Cubit<AdressState> {
+class ListAdressCubit extends Cubit<AdressState> {
   final AddressRepository _addressRepository = AddressRepository();
 
-  ListAddressCubit() : super(AdressState.initial());
+  ListAdressCubit() : super(AdressState.initial());
 
   void saveAddress(Adress address) async {
     final List<Adress> savedAddresses = [...state.savedAddresses, address];
@@ -38,13 +38,9 @@ class ListAddressCubit extends Cubit<AdressState> {
     await _addressRepository.removeAddress(address);
   }
 
-  void setCurrentAddress(Adress address) {
+  void setCurrentAddress(Adress? address) {
     emit(AdressState(
         savedAddresses: state.savedAddresses, currentAddress: address));
-  }
-
-  Adress? getCurrentAddress() {
-    return state.currentAddress;
   }
 
   void clearAddresses() {
