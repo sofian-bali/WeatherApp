@@ -3,7 +3,9 @@ import 'package:weather_app/ui/screens/home.dart';
 import 'package:weather_app/ui/screens/favory.dart';
 import 'package:weather_app/ui/screens/week.dart';
 
+
 class AppRouter {
+
   static const String homePage = '/';
 
   static final Map<String, WidgetBuilder> routes = {
@@ -12,4 +14,3 @@ class AppRouter {
     '/week': (context) => const WeekScreen(),
   };
 }
-
