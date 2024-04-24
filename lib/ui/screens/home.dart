@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/ui/widget/bottom_bar.dart';
+import 'package:flutter/cupertino.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -11,9 +12,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Weather App'),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: const Text('Home Screen'),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Angers", style: TextStyle(fontSize: 30)),
+            Icon(CupertinoIcons.sun_max_fill, size:100),
+            Text("28°C", style: TextStyle(fontSize: 30)),
+          ],
+        ),
       ),
       bottomNavigationBar: const CustomBottomAppBar(),
     );
