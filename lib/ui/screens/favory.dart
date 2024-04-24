@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/ui/widget/bottom_bar.dart';
-
+import 'package:weather_app/ui/widget/card_favory.dart';
 
 class FavoryScreen extends StatelessWidget {
   const FavoryScreen({super.key});
@@ -11,11 +11,29 @@ class FavoryScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Weather App'),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: const Text('Favorite Screen'),
+      
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          FavoryCard(
+            location: 'Angers',
+            onRemove: () {
+
+            },
+          ),
+          FavoryCard(
+            location: 'Angers',
+            onRemove: () {
+
+            },
+            
+          ),
+       
+
+        ],
       ),
       bottomNavigationBar: const CustomBottomAppBar(),
+
     );
   }
 }
