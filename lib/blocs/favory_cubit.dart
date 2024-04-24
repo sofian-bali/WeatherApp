@@ -20,7 +20,7 @@ class FavoryCubit extends Cubit<List<Address>> {
 
   void removeAddress(Address address) async {
     final List<Address> savedAddresses = [...state];
-    savedAddresses.remove(address);
+    savedAddresses.removeWhere((el) => el.city == address.city);
     emit(savedAddresses);
     await _favoryRepository.removeAddress(address);
   }

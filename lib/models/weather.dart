@@ -7,16 +7,16 @@ class Weather {
   factory Weather.fromJson(Map<String, dynamic> json) {
     final int timestamp = json['dt'];
     // kalvin to celsius
-    final double temperature = (json['main']['temp'] - 273.15).toDouble();
+    final double temperature = (json['main']['temp'] - 273.15).roundToDouble();
     // m/s to km/h
-    final double windSpeed = (json['wind']['speed'] * 3.6).toDouble();
+    final double windSpeed = (json['wind']['speed'] * 3.6).roundToDouble();
     final String icon = json['weather'][0]['icon'];
 
     return Weather(
         timestamp: timestamp,
         temperature: temperature,
         windSpeed: windSpeed,
-        icon: icon);
+        icon: 'https://openweathermap.org/img/wn/${icon}@2x.png');
   }
 
   Weather({

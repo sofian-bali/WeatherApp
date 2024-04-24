@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/blocs/home_cubit.dart';
 import 'package:weather_app/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,7 @@ Future main() async {
   await dotenv.load(fileName: ".env");
 
   final FavoryCubit favoryCubit = FavoryCubit();
+  final HomeCubit homeCubit = HomeCubit();
 
   favoryCubit.getSavedAddresses();
 
@@ -17,6 +19,9 @@ Future main() async {
     providers: [
       BlocProvider<FavoryCubit>(
         create: (_) => favoryCubit,
+      ),
+      BlocProvider<HomeCubit>(
+        create: (_) => homeCubit,
       ),
     ],
     child: const MyApp(),
