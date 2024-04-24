@@ -5,8 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AddressRepository {
   Future<List<Adress>> fetchAddresses(String query) async {
-    final Response response = await get(
-        Uri.parse('https://api-adresse.data.gouv.fr/search?q=$query'));
+    final Response response = await get(Uri.parse(
+        'https://api-adresse.data.gouv.fr/search?q=$query&type=municipality'));
     if (response.statusCode == 200) {
       final List<Adress> addresses = [];
       final Map<String, dynamic> json = jsonDecode(response.body);
