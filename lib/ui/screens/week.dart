@@ -27,7 +27,38 @@ class _WeekScreenState extends State<WeekScreen> {
             children: [
               ListTile(
                 title: Text('Day $index'),
-                subtitle: const Text('28°C'),
+                subtitle: 
+                const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(CupertinoIcons.wind),
+                                    Text(' 10 km/h'),
+                                  ],
+                                ),  
+                                Row(
+                                  children: [
+                                    Icon(CupertinoIcons.drop),
+                                    Text(' 80%'),
+                                  ],  
+                                ),
+
+                                Row(
+                                  children: [
+                                    Icon(Icons.waves),
+                                    Text(' 80%'),
+                                  ],
+                                ),    
+                                 Row(
+                                  children: [
+                                    Icon(CupertinoIcons.thermometer),
+                                    Text(' 20°C'),
+                                  ],
+                                ),    
+                              ],
+                            ),
+                
                 leading: const Icon(CupertinoIcons.sun_max_fill),
                 trailing: _isExpanded[index]
                     ? const Icon(CupertinoIcons.chevron_down)
@@ -43,7 +74,6 @@ class _WeekScreenState extends State<WeekScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
-
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -51,12 +81,37 @@ class _WeekScreenState extends State<WeekScreen> {
                         itemBuilder: (contexthour, indexhour){
                           return ListTile(
                             title: Text('Heure : $indexhour:00'),
-                            subtitle: const Text('Météo : ...'),
+                            subtitle: 
+                             const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(CupertinoIcons.wind),
+                                    Text(' 10 km/h'),
+                                  ],
+                                ),  
+                                Row(
+                                  children: [
+                                    Icon(CupertinoIcons.drop),
+                                    Text(' 80%'),
+                                  ],  
+                                ),
+
+                                Row(
+                                  children: [
+                                    Icon(Icons.waves),
+                                    Text(' 80%'),
+                                  ],
+                                ),      
+                              ],
+                            ),
+                            leading: const Icon(CupertinoIcons.sun_max_fill),
+                            trailing: const Text("20°C", style: TextStyle(color: Colors.black, fontSize: 20)),
                           );
                         },  
                       ),
                     ],
-                    
                   ),
                 ),
               ],

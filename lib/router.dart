@@ -9,10 +9,8 @@ class AppRouter {
   static const String homePage = '/';
 
   static final Map<String, WidgetBuilder> routes = {
-    
     homePage: (context) => const HomeScreen(),
     '/favory': (context) => const FavoryScreen(),
     '/week': (context) => const WeekScreen(),
-
   };
 }
