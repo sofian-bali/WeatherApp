@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:weather_app/blocs/list_adress_cubit.dart';
+import 'package:weather_app/blocs/favory_cubit.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
-  final ListAdressCubit listAdressCubit = ListAdressCubit();
+  final FavoryCubit favoryCubit = FavoryCubit();
 
-  listAdressCubit.getSavedAddresses();
+  favoryCubit.getSavedAddresses();
 
   runApp(MultiProvider(
     providers: [
-      BlocProvider<ListAdressCubit>(
-        create: (_) => listAdressCubit,
+      BlocProvider<FavoryCubit>(
+        create: (_) => favoryCubit,
       ),
     ],
     child: const MyApp(),

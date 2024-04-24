@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:weather_app/models/address.dart';
 
 class FavoryCard extends StatelessWidget {
   const FavoryCard({
-    Key? key,
+    super.key,
     required this.location,
     this.onRemove,
-  }) : super(key: key);
+  });
 
-  final String location;
+  final Address location;
   final VoidCallback? onRemove;
 
   @override
@@ -30,10 +31,11 @@ class FavoryCard extends StatelessWidget {
                   const Padding(padding: EdgeInsets.all(2)),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/detail', arguments: location);
+                      Navigator.pushNamed(context, '/detail',
+                          arguments: location.latLng);
                     },
                     child: Text(
-                      location,
+                      location.city,
                       style: const TextStyle(
                         fontSize: 20,
                         color: Colors.black,
