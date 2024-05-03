@@ -3,10 +3,9 @@ import 'package:weather_app/ui/widget/bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 
 class WeekScreen extends StatefulWidget {
-  const WeekScreen({super.key});
+  const WeekScreen({Key? key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _WeekScreenState createState() => _WeekScreenState();
 }
 
@@ -19,103 +18,46 @@ class _WeekScreenState extends State<WeekScreen> {
       appBar: AppBar(
         title: const Text('Weather App'),
       ),
-      body:ListView.builder(
-        scrollDirection: Axis.vertical,
+      body: ListView.builder(
         itemCount: 7,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              ListTile(
-                title: Text('Day $index'),
-                subtitle: 
-                const Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(CupertinoIcons.wind),
-                                    Text(' 10 km/h'),
-                                  ],
-                                ),  
-                                Row(
-                                  children: [
-                                    Icon(CupertinoIcons.drop),
-                                    Text(' 80%'),
-                                  ],  
-                                ),
-
-                                Row(
-                                  children: [
-                                    Icon(Icons.waves),
-                                    Text(' 80%'),
-                                  ],
-                                ),    
-                                 Row(
-                                  children: [
-                                    Icon(CupertinoIcons.thermometer),
-                                    Text(' 20°C'),
-                                  ],
-                                ),    
-                              ],
-                            ),
-                
-                leading: const Icon(CupertinoIcons.sun_max_fill),
-                trailing: _isExpanded[index]
-                    ? const Icon(CupertinoIcons.chevron_down)
-                    : const Icon(CupertinoIcons.chevron_right),
-                onTap: () {
-                  setState(() {
-                    _isExpanded[index] = !_isExpanded[index];
-                  });
-                },
+          return ExpansionTile(
+            tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            title: Text(
+              'Day $index',
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
               ),
-              if (_isExpanded[index]) ...[
-                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    children: [
-                      ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: 24,
-                        itemBuilder: (contexthour, indexhour){
-                          return ListTile(
-                            title: Text('Heure : $indexhour:00'),
-                            subtitle: 
-                             const Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(CupertinoIcons.wind),
-                                    Text(' 10 km/h'),
-                                  ],
-                                ),  
-                                Row(
-                                  children: [
-                                    Icon(CupertinoIcons.drop),
-                                    Text(' 80%'),
-                                  ],  
-                                ),
-
-                                Row(
-                                  children: [
-                                    Icon(Icons.waves),
-                                    Text(' 80%'),
-                                  ],
-                                ),      
-                              ],
-                            ),
-                            leading: const Icon(CupertinoIcons.sun_max_fill),
-                            trailing: const Text("20°C", style: TextStyle(color: Colors.black, fontSize: 20)),
-                          );
-                        },  
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              const Divider(),
+            ),
+            leading: const CircleAvatar(
+              backgroundColor: Colors.blue,
+              child: Icon(CupertinoIcons.sun_max_fill, color: Colors.white),
+            ),
+            onExpansionChanged: (expanded) {
+              setState(() {
+                _isExpanded[index] = expanded;
+              });
+            },
+            initiallyExpanded: _isExpanded[index],
+            children: const [
+              ListTile(
+                title: Text('10 km/h Wind'),
+                leading: Icon(CupertinoIcons.wind),
+              ),
+              ListTile(
+                title: Text('80% Humidity'),
+                leading: Icon(CupertinoIcons.drop),
+              ),
+              ListTile(
+                title: Text('80% Wave Height'),
+                leading: Icon(Icons.waves),
+              ),
+              ListTile(
+                title: Text('20°C Temperature'),
+                leading: Icon(CupertinoIcons.thermometer),
+              ),
             ],
           );
         },
