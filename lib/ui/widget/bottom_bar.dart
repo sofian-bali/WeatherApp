@@ -43,7 +43,8 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
         break;
     }
 
-    return BottomNavigationBar(
+    return 
+    BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.home),

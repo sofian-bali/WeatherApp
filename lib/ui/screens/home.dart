@@ -64,6 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           decoration: const InputDecoration(
                             labelText: 'Rechercher une adresse',
                             icon: Icon(Icons.search),
+                            labelStyle: TextStyle(color: Colors.black),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
+                            focusColor: Colors.black,
+
                           ),
                         ),
                         if (_isSearching && _searchAddress.isNotEmpty)

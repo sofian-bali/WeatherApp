@@ -16,7 +16,7 @@ class Weather {
         timestamp: timestamp,
         temperature: temperature,
         windSpeed: windSpeed,
-        icon: 'https://openweathermap.org/img/wn/${icon}@2x.png');
+        icon: 'https://openweathermap.org/img/wn/$icon@2x.png');
   }
 
   Weather({

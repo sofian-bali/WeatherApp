@@ -17,11 +17,15 @@ class FavoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      elevation: 2, // Ajout d'une légère ombre pour la profondeur
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Coins arrondis
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         child: SizedBox(
-          height: 100,
+          height: 80,
           width: double.infinity,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,8 +33,12 @@ class FavoryCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Icon(CupertinoIcons.location, size: 25),
-                  const Padding(padding: EdgeInsets.all(2)),
+                  const Icon(
+                    CupertinoIcons.location,
+                    size: 25,
+                    color: Colors.blue, // Utilisation d'une couleur bleue pour l'icône
+                  ),
+                  const SizedBox(width: 10),
                   TextButton(
                     onPressed: () {
                       if (onTap != null) onTap!();
@@ -38,8 +46,9 @@ class FavoryCard extends StatelessWidget {
                     child: Text(
                       location.city,
                       style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
+                        fontSize: 18,
+                        color: Colors.black87, // Texte en noir pour une meilleure lisibilité
+                        fontWeight: FontWeight.bold, // Texte en gras pour le titre
                       ),
                     ),
                   ),
@@ -47,7 +56,10 @@ class FavoryCard extends StatelessWidget {
               ),
               if (onRemove != null)
                 IconButton(
-                  icon: const Icon(CupertinoIcons.bin_xmark),
+                  icon: const Icon(
+                    CupertinoIcons.bin_xmark,
+                    color: Colors.red, // Utilisation d'une couleur rouge pour l'icône de suppression
+                  ),
                   onPressed: onRemove,
                 ),
             ],
