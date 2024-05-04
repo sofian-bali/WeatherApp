@@ -89,8 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               itemBuilder: (context, index) {
                                 return ListTile(
                                   onTap: () {
-                                    homeCubit.setCurrentWeather(
-                                        _searchAddress[index].latLng);
                                     homeCubit.setCurrentAddress(
                                         _searchAddress[index]);
                                     setState(() {
@@ -122,7 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Text(currentAddress?.city ?? "-",
                         style: const TextStyle(fontSize: 30)),
-                    Image.network(currentWeather?.icon ?? ""),
+                    if (currentWeather?.icon != null)
+                      Image.network(currentWeather?.icon ?? ""),
                     Text(currentWeather?.temperature.toString() ?? "-",
                         style: const TextStyle(fontSize: 30)),
                   ],

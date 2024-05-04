@@ -7,10 +7,12 @@ class FavoryCard extends StatelessWidget {
     super.key,
     required this.location,
     this.onRemove,
+    this.onTap,
   });
 
   final Address location;
   final VoidCallback? onRemove;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,7 @@ class FavoryCard extends StatelessWidget {
                   const Padding(padding: EdgeInsets.all(2)),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/detail',
-                          arguments: location.latLng);
+                      if (onTap != null) onTap!();
                     },
                     child: Text(
                       location.city,

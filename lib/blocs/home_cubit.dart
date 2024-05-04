@@ -14,14 +14,9 @@ class HomeState {
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeState(currentWeather: null, currentAddress: null));
 
-  void setCurrentWeather(LatLng latLng) async {
-    final weather = await WeatherRepository().fetchCurrentWeather(latLng);
-    emit(HomeState(
-        currentWeather: weather, currentAddress: state.currentAddress));
-  }
-
-  void setCurrentAddress(Address address) {
-    emit(HomeState(
-        currentWeather: state.currentWeather, currentAddress: address));
+  void setCurrentAddress(Address address) async {
+    final weather =
+        await WeatherRepository().fetchCurrentWeather(address.latLng);
+    emit(HomeState(currentWeather: weather, currentAddress: address));
   }
 }
