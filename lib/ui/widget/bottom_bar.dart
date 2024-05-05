@@ -13,7 +13,6 @@ class CustomBottomAppBar extends StatefulWidget {
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
-
     switch (index) {
       case 0:
         Navigator.pushReplacementNamed(context, AppRouter.homePage);
@@ -21,11 +20,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
       case 1:
         Navigator.pushReplacementNamed(context, '/favory');
         break;
-      case 2:
-        Navigator.pushReplacementNamed(context, '/week');
-        break;
     }
-  
   }
 
   @override
@@ -38,13 +33,9 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
       case '/favory':
         _selectedIndex = 1;
         break;
-      case '/week':
-        _selectedIndex = 2;
-        break;
     }
 
-    return 
-    BottomNavigationBar(
+    return BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.home),
@@ -53,10 +44,6 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.heart),
           label: 'Favorite',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.calendar),
-          label: 'Week',
         ),
       ],
       currentIndex: _selectedIndex,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/blocs/home_cubit.dart';
+import 'package:weather_app/blocs/week_cubit.dart';
 import 'package:weather_app/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,7 @@ Future main() async {
 
   final FavoryCubit favoryCubit = FavoryCubit();
   final HomeCubit homeCubit = HomeCubit();
+  final WeekCubit weekCubit = WeekCubit();
 
   favoryCubit.getSavedAddresses();
 
@@ -22,6 +24,9 @@ Future main() async {
       ),
       BlocProvider<HomeCubit>(
         create: (_) => homeCubit,
+      ),
+      BlocProvider<WeekCubit>(
+        create: (_) => weekCubit,
       ),
     ],
     child: const MyApp(),

@@ -28,7 +28,7 @@ class FavoryScreen extends StatelessWidget {
                           homeContext
                               .read<HomeCubit>()
                               .setCurrentAddress(address);
-                          Navigator.pushNamed(context, "/");
+                          Navigator.pushReplacementNamed(context, '/');
                         },
                         onRemove: () {
                           favoryContext

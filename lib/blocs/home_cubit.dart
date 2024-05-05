@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:weather_app/models/address.dart';
 import 'package:weather_app/models/weather.dart';
 import 'package:weather_app/repositories/weather_repository.dart';
