@@ -39,6 +39,11 @@ flutter run
 - Ability to add locations to favorites for quick access.
 - User-friendly and intuitive interface.
 
+🔧 APIs Used
+
+- [OpenWeather API](https://openweathermap.org/api): Used for weather data.
+- [API Adresse](https://api-adresse.data.gouv.fr/): Used for address search.
+
 🤝 Contributing
 
 - Bali Sofian - [@sofian-bali](https://github.com/sofian-bali)
