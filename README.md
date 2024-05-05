@@ -11,7 +11,7 @@ WeatherApp is a mobile application developed using Flutter that provides weather
 - Clone the GitHub repository:
 
 ```bash
-git clone https://github.com/your-username/WeatherApp.git
+git clone https://gitlab.com/mobile2141017/WeatherApp.git
 ```
 
 ### Flutter Installation
