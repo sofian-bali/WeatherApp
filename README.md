@@ -1,26 +1,53 @@
-# weather_app
+# WeatherApp
 
-A new Flutter project.
+🌦️ About
 
-## Getting Started
+WeatherApp is a mobile application developed using Flutter that provides weather forecasts for various locations. The app consists of three main pages: a home page, a favorites page for saving preferred locations, and a weekly weather page for each selected location.
 
-This project is a starting point for a Flutter application.
+🚀 Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+### Cloning the Repository
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Clone the GitHub repository:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/your-username/WeatherApp.git
+```
 
-<!--
+### Flutter Installation
 
-TODO
+- Ensure Flutter is installed. If not, follow the installation instructions on the Flutter official website: [Flutter Installation](https://flutter.dev/docs/get-started/install)
 
-- la version de Flutter/Dart utilisée
-- les fonctionnalités de l’application
-- les API utilisées
+### Environment Variables
 
--->
+- Rename the `.env-sample` file to `.env` and replace the values with the correct ones. This file contains the API keys required to access weather data.
+
+### Running the Application
+
+- Open the project in your preferred code editor.
+- Execute the following command in the project directory to run the application:
+
+```bash
+flutter run
+```
+
+💡 Tip: Make sure you have an emulator running or a device connected.
+
+🏗️ Features
+
+- Display current weather and weekly forecasts for different locations.
+- Ability to add locations to favorites for quick access.
+- User-friendly and intuitive interface.
+
+🤝 Contributing
+
+- Bali Sofian - [@sofian-bali](https://github.com/sofian-bali)
+
+📚 Languages & Frameworks
+
+- Flutter version 3.19.0
+- Dart version 3.3.0
+
+📝 Authors
+
+- Tisma - [@maths1009](https://gitlab.com/maths1009)
