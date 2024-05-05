@@ -3,10 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:weather_app/router.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
-  const CustomBottomAppBar({super.key});
+  const CustomBottomAppBar({Key? key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _CustomBottomAppBarState createState() => _CustomBottomAppBarState();
 }
 
@@ -47,9 +46,12 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Theme.of(context).primaryColor,
-      unselectedItemColor: Colors.grey,
+      selectedItemColor:
+          Colors.blueAccent, // Change the selected item color here
+      unselectedItemColor: Colors.grey, // Change the unselected item color here
       onTap: _onItemTapped,
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+      unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
     );
   }
 }

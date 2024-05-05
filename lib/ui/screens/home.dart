@@ -9,7 +9,7 @@ import 'package:weather_app/ui/widget/bottom_bar.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Weather App'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: BlocBuilder<FavoryCubit, List<Address>>(
         builder: (favoryContext, favoryState) {
