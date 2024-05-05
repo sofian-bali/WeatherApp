@@ -5,9 +5,10 @@ import 'package:weather_app/ui/widget/bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 
 class WeekScreen extends StatefulWidget {
-  const WeekScreen({Key? key});
+  const WeekScreen({super.key, Key? newKey});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WeekScreenState createState() => _WeekScreenState();
 }
 

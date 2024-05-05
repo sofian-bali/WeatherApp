@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:weather_app/router.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
-  const CustomBottomAppBar({Key? key});
+  const CustomBottomAppBar({super.key, Key? customKey});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomBottomAppBarState createState() => _CustomBottomAppBarState();
 }
 
